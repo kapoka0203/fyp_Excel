@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,11 +26,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
-
-    //tt
+public class MainActivity<button> extends AppCompatActivity {
 
     private EditText edt_input_site_code;
+    private Button btn_add_item;
     private File filePath = new File(Environment.getExternalStorageDirectory() + "/"+ edt_input_site_code + "Table_one.xls");
 
     String [] strings = new String[]{"site_loc_code", "tx_link_type", "tx_dt_no", "tx_eqpt", "tx_eqpt_name", "Tx_Eqpt_WiFi_Name", "hotel_bbu_loc",
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         edt_input_site_code = findViewById(R.id.edt_Site_code);
+        btn_add_item = findViewById(R.id.btn_add);
     }
 
     public void buttonCreateExcel(View view){
@@ -101,4 +103,75 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
             }
         }
+
+        public void onCheckboxClicked(View view) {
+            boolean checked =((CheckBox) view).isChecked();
+
+            switch (view.getId()){
+                case R.id.rru_900:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_900", Toast.LENGTH_LONG).show();
+                    }else {
+
+                    };
+                    break;
+
+                case R.id.rru_700and900:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_700900", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    }
+                    break;
+
+                case R.id.rru_2100:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_2100", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    };
+                    break;
+
+                case R.id.rru_2600:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_2100", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    };
+                    break;
+
+                case R.id.aau_3500:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_2100", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    };
+                    break;
+
+                case R.id.aau_4900:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_2100", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    };
+                    break;
+
+                case R.id.aau_duel:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_2100", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    };
+                    break;
+
+                case R.id.aau_gbl:
+                    if (checked){
+                        Toast.makeText(this, "this is rru_2100", Toast.LENGTH_LONG).show();
+                    }else{
+
+                    };
+                    break;
+            }
+        }
+
 }
